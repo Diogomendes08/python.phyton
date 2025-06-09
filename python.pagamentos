@@ -1,0 +1,44 @@
+def main():
+    print("Banco Monedas")
+    saldo = 7
+    print(f"Seu saldo disponível é: R$ {saldo}")
+    while True:
+        print("O que você gostaria de fazer?")
+        print("1) Fazer um pagamento")
+        print("2) Ver seu saldo")
+        print("3) Sair")
+        
+        escolha = input("Digite o número da opção: ")
+        if escolha == "1":
+            saldo = fazer_pagamento(saldo)
+        elif escolha == "2":
+            print("Seu saldo atual é: R$ (7)")
+        elif escolha == "3":
+            print("Obrigado por usar Monedas!")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha 1, 2 ou 3.")
+
+def fazer_pagamento(saldo_atual):
+    print("Você está fazendo um pagamento")
+
+    destinatario = input("Para quem você quer pagar? Digite o nome: ")
+    valor = float(input(f"Quanto você quer pagar para (destinatario)? R$ "))
+
+    if valor > saldo_atual:
+        print("Você não tem saldo suficiente para este pagamento.")
+        print("Seu saldo é R$ {saldo_atual} e você tentou pagar R$ (valor)")
+        return saldo_atual
+        
+    confirmacao = input(f"Tem certeza que quer pagar R$ {valor} para {destinatario}? (sim/não): ").lower()
+    
+    if confirmacao == "sim":
+        novo_saldo = saldo_atual - valor
+        print("Pagamento realizado com sucesso!")
+        print("Seu novo saldo é: R$ (novo_saldo)")
+        return novo_saldo
+    else:
+        print("Pagamento cancelado.")
+        return saldo_atual
+
+main()
