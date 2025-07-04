@@ -1,0 +1,32 @@
+sistemas = []
+
+def cadastrar_sistema():
+    print("\n--- Cadastrar Sistema ---")
+    id_sistema = int(input("ID do sistema: "))
+    id_empresa = int(input("ID da empresa: "))
+    funcionarios = input("Funcionários (separados por vírgula): ")
+    
+    sistemas.append({
+      
+    })
+    print("Sistema cadastrado com sucesso!")
+
+def listar_sistemas():
+    print("\n--- Lista de Sistemas ---")
+    for sis in sistemas:
+        print(f"ID: {sis['id']} | Empresa: {sis['empresa']} | Funcionários: {sis['funcionarios']}")
+
+while True:
+    print("\n1. Cadastrar sistema")
+    print("2. Listar sistemas")
+    print("3. Sair")
+    opcao = input("Escolha uma opção: ")
+    
+    if opcao == "1":
+        cadastrar_sistema()
+    elif opcao == "2":
+        listar_sistemas()
+    elif opcao == "3":
+        break
+    else:
+        print("Opção inválida!")
