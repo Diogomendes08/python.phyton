@@ -1,0 +1,33 @@
+auditorias = []
+
+def registrar_auditoria():
+    print("\n--- Registrar Auditoria ---")
+    id_auditoria = int(input("ID da auditoria: "))
+    acao = input("Ação realizada: ")
+    
+    auditorias.append({
+        'id': id_auditoria,
+        'acao': acao,
+        'data': "2023-11-20"  
+    })
+    print("Auditoria registrada!")
+
+def listar_auditorias():
+    print("\n--- Histórico de Auditorias ---")
+    for aud in auditorias:
+        print(f"ID: {aud['id']} | Ação: {aud['acao']} | Data: {aud['data']}")
+
+while True:
+    print("\n1. Registrar auditoria")
+    print("2. Listar auditorias")
+    print("3. Sair")
+    opcao = input("Escolha uma opção: ")
+    
+    if opcao == "1":
+        registrar_auditoria()
+    elif opcao == "2":
+        listar_auditorias()
+    elif opcao == "3":
+        break
+    else:
+        print("Opção inválida!")
