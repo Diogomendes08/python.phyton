@@ -1,0 +1,34 @@
+
+empresas = []
+
+def cadastrar_empresa():
+    print("\n--- Cadastrar Empresa ---")
+    id_empresa = int(input("ID da empresa: ")) 
+    endereco = input("Endereço: ")
+    telefone = input("Telefone: ")
+    email = input("Email: ")
+
+    empresas.append({
+        'id': id_empresa,
+        'endereco': endereco,
+        'telefone': telefone,
+        'email': email
+    })
+    print("Empresa cadastrada com sucesso!")
+
+def listar_empresas():
+    print("\n--- Lista de Empresas ---")
+    for emp in empresas:
+        print(f"ID: {emp['id']} | Endereço: {emp['endereco']} | Tel: {emp['telefone']}")  # 
+while True:
+    print("\n1. Cadastrar empresa")
+    print("2. Listar empresas")
+    print("3. Sair")
+    opcao = input("Escolha uma opção: ")
+    
+    if opcao == "1":
+        cadastrar_empresa()
+    elif opcao == "2":
+        listar_empresas()  
+    elif opcao == "3":
+        break
